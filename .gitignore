@@ -64,6 +64,12 @@ yarn-error.log*
 .env.test
 .env.production
 
+# Configuration files with sensitive data
+src/NovaSigorta.API/appsettings.json
+src/NovaSigorta.API/appsettings.Development.json
+src/NovaSigorta.API/appsettings.Production.json
+src/NovaSigorta.API/appsettings.*.json
+
 # Temporary files
 *.tmp
 *.swp
