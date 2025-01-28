@@ -36,6 +36,14 @@ public class AdminController : ControllerBase
         return BadRequest(result);
     }
 
+    // Geliştirme amaçlı - şifre hash'i hesaplama endpoint'i
+    [HttpPost("hash-password")]
+    public ActionResult<object> HashPassword([FromBody] string password)
+    {
+        var hash = BCrypt.Net.BCrypt.HashPassword(password);
+        return Ok(new { password, hash });
+    }
+
     [HttpGet("profile")]
     [Authorize]
     public async Task<ActionResult<ResponseDto<AdminDto>>> GetProfile()
