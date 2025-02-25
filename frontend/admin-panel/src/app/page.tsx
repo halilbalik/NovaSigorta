@@ -1,23 +1,17 @@
 'use client';
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { useAuth } from '@/contexts/AuthContext';
+import dynamic from 'next/dynamic';
 import { Loading } from '@/components/Loading';
 
+// Dynamic import ile client-side only component
+const PublicHomePage = dynamic(
+  () => import('@/components/PublicHomePage').then(mod => ({ default: mod.PublicHomePage })),
+  {
+    ssr: false,
+    loading: () => <Loading text="Sayfa yükleniyor..." />
+  }
+);
+
 export default function Home() {
-  const { isAuthenticated, isLoading } = useAuth();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!isLoading) {
-      if (isAuthenticated) {
-        router.push('/dashboard');
-      } else {
-        router.push('/login');
-      }
-    }
-  }, [isAuthenticated, isLoading, router]);
-
-  return <Loading text="Yönlendiriliyor..." />;
+  return <PublicHomePage />;
 }

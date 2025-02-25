@@ -128,8 +128,8 @@ export default function LoginPage() {
 
           <div className="text-center text-sm text-gray-500">
             <p>Test Kullanıcısı:</p>
-            <p>Kullanıcı: <strong>admin</strong></p>
-            <p>Şifre: <strong>admin123</strong></p>
+            <p>Kullanıcı: <strong>halil</strong></p>
+            <p>Şifre: <strong>ee04df74ba</strong></p>
           </div>
         </form>
       </div>
