@@ -37,7 +37,7 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
         </View>
         <TouchableOpacity
           style={styles.adminButton}
-          onPress={() => {/* TODO: Admin Login */}}
+          onPress={() => navigation.navigate('AdminLogin')}
         >
           <Ionicons name="person-circle-outline" size={24} color="white" />
         </TouchableOpacity>

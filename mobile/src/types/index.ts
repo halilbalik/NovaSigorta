@@ -32,10 +32,44 @@ export interface CreateApplicationRequest {
   phone: string;
 }
 
+// Admin Types
+export interface AdminLoginRequest {
+  username: string;
+  password: string;
+}
+
+export interface AdminLoginResponse {
+  success: boolean;
+  token: string;
+  message: string;
+}
+
+export interface AdminProfile {
+  username: string;
+  lastLoginAt?: string;
+}
+
+export interface CreateInsuranceRequest {
+  name: string;
+  description: string;
+  isActive: boolean;
+}
+
+export interface UpdateInsuranceRequest {
+  name: string;
+  description: string;
+  isActive: boolean;
+}
+
 // Navigation Types
 export type RootStackParamList = {
   Home: undefined;
   InsuranceSelection: undefined;
   ApplicationForm: { insurance: Insurance };
   Success: { insuranceName: string };
+  AdminLogin: undefined;
+  AdminDashboard: undefined;
+  AdminInsurances: undefined;
+  AdminApplications: undefined;
+  AdminInsuranceForm: { insurance?: Insurance };
 };
