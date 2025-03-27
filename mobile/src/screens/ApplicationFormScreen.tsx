@@ -99,9 +99,10 @@ export const ApplicationFormScreen: React.FC<Props> = ({ navigation, route }) =>
   };
 
   const convertDateToISO = (dateStr: string): string => {
-    // DD/MM/YYYY -> YYYY-MM-DD
+    // DD/MM/YYYY -> ISO DateTime string
     const [day, month, year] = dateStr.split('/');
-    return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+    const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+    return date.toISOString();
   };
 
   const handleSubmit = async () => {

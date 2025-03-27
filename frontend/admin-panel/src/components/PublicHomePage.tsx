@@ -17,6 +17,7 @@ export const PublicHomePage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [successInsuranceName, setSuccessInsuranceName] = useState('');
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -67,9 +68,16 @@ export const PublicHomePage: React.FC = () => {
       setIsSubmitting(true);
       setError('');
 
-      const response = await api.createPublicApplication(applicationData);
+      // Format date to ISO string for backend
+      const formattedData = {
+        ...applicationData,
+        selectedDate: new Date(applicationData.selectedDate).toISOString(),
+      };
+
+      const response = await api.createPublicApplication(formattedData);
 
       if (response.success) {
+        setSuccessInsuranceName(selectedInsurance?.name || '');
         setIsSuccess(true);
         setApplicationData({ insuranceId: 0, selectedDate: '', phone: '' });
         setSelectedInsurance(null);
@@ -86,6 +94,7 @@ export const PublicHomePage: React.FC = () => {
 
   const resetForm = () => {
     setIsSuccess(false);
+    setSuccessInsuranceName('');
     setError('');
   };
 
@@ -98,9 +107,25 @@ export const PublicHomePage: React.FC = () => {
             Başvurunuz Alındı!
           </h2>
           <p className="text-gray-600 mb-6">
-            <strong>{selectedInsurance?.name}</strong> sigortası için başvurunuz başarıyla gönderildi.
+            <strong>{successInsuranceName}</strong> sigortası için başvurunuz başarıyla gönderildi.
             En kısa sürede sizinle iletişime geçeceğiz.
           </p>
+
+          {/* Emergency Contact Info */}
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+            <div className="flex items-center text-blue-800">
+              <svg className="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-sm font-medium">
+                Acil durumlar için:
+                <a href="tel:+902125550123" className="ml-2 font-semibold hover:underline">
+                  +90 (212) 555-0123
+                </a>
+              </span>
+            </div>
+          </div>
+
           <button
             onClick={resetForm}
             className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition-colors"
