@@ -17,7 +17,7 @@ export default function LoginPage() {
   const { login, isAuthenticated } = useAuth();
   const router = useRouter();
 
-  // Eğer zaten giriş yapılmışsa dashboard'a yönlendir
+
   useEffect(() => {
     if (isAuthenticated) {
       router.push('/dashboard');

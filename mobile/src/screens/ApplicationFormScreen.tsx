@@ -49,7 +49,7 @@ export const ApplicationFormScreen: React.FC<Props> = ({ navigation, route }) =>
   };
 
   const formatDate = (text: string) => {
-    // DD/MM/YYYY formatında tarih girişi
+
     const cleaned = text.replace(/\D/g, '');
     const match = cleaned.match(/^(\d{0,2})(\d{0,2})(\d{0,4})$/);
 
@@ -64,7 +64,7 @@ export const ApplicationFormScreen: React.FC<Props> = ({ navigation, route }) =>
   };
 
   const formatPhone = (text: string) => {
-    // 0XXX XXX XX XX formatında telefon girişi
+
     const cleaned = text.replace(/\D/g, '');
     const match = cleaned.match(/^(\d{0,4})(\d{0,3})(\d{0,2})(\d{0,2})$/);
 
@@ -99,7 +99,7 @@ export const ApplicationFormScreen: React.FC<Props> = ({ navigation, route }) =>
   };
 
   const convertDateToISO = (dateStr: string): string => {
-    // DD/MM/YYYY -> ISO DateTime string
+
     const [day, month, year] = dateStr.split('/');
     const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
     return date.toISOString();
@@ -139,7 +139,7 @@ export const ApplicationFormScreen: React.FC<Props> = ({ navigation, route }) =>
         style={styles.keyboardView}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
-        {/* Header */}
+
         <View style={styles.header}>
           <TouchableOpacity
             style={styles.backButton}
@@ -154,7 +154,7 @@ export const ApplicationFormScreen: React.FC<Props> = ({ navigation, route }) =>
         </View>
 
         <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
-          {/* Selected Insurance */}
+
           <View style={styles.selectedInsurance}>
             <Ionicons name="shield-checkmark" size={24} color="#2563eb" />
             <View style={styles.insuranceInfo}>
@@ -163,11 +163,11 @@ export const ApplicationFormScreen: React.FC<Props> = ({ navigation, route }) =>
             </View>
           </View>
 
-          {/* Form */}
+
           <View style={styles.form}>
             <Text style={styles.formTitle}>Başvuru Bilgileri</Text>
 
-            {/* Date Input */}
+
             <View style={styles.inputGroup}>
               <Text style={styles.label}>
                 <Ionicons name="calendar" size={16} color="#374151" /> İstediğiniz Tarih
@@ -187,7 +187,7 @@ export const ApplicationFormScreen: React.FC<Props> = ({ navigation, route }) =>
               />
             </View>
 
-            {/* Phone Input */}
+
             <View style={styles.inputGroup}>
               <Text style={styles.label}>
                 <Ionicons name="call" size={16} color="#374151" /> Telefon Numaranız
@@ -207,7 +207,7 @@ export const ApplicationFormScreen: React.FC<Props> = ({ navigation, route }) =>
               />
             </View>
 
-            {/* Submit Button */}
+
             <TouchableOpacity
               style={[styles.submitButton, isSubmitting && styles.submitButtonDisabled]}
               onPress={handleSubmit}

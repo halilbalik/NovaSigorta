@@ -1,4 +1,3 @@
-// API Response Types
 export interface ApiResponse<T> {
   success: boolean;
   message: string;
@@ -6,7 +5,6 @@ export interface ApiResponse<T> {
   errors?: string[];
 }
 
-// Insurance Types
 export interface Insurance {
   id: number;
   name: string;
@@ -16,7 +14,6 @@ export interface Insurance {
   updatedAt?: string;
 }
 
-// Application Types
 export interface Application {
   id: number;
   insuranceId: number;
@@ -32,7 +29,6 @@ export interface CreateApplicationRequest {
   phone: string;
 }
 
-// Admin Types
 export interface AdminLoginRequest {
   username: string;
   password: string;
@@ -61,7 +57,6 @@ export interface UpdateInsuranceRequest {
   isActive: boolean;
 }
 
-// Navigation Types
 export type RootStackParamList = {
   Home: undefined;
   InsuranceSelection: undefined;

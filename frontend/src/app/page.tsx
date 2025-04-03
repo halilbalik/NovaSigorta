@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 import { Loading } from '@/components/Loading';
 
-// Dynamic import ile client-side only component
+
 const PublicHomePage = dynamic(
   () => import('@/components/PublicHomePage').then(mod => ({ default: mod.PublicHomePage })),
   {

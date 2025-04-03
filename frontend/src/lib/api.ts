@@ -23,7 +23,7 @@ class ApiClient {
       },
     });
 
-    // Request interceptor - JWT token ekleme
+
     this.client.interceptors.request.use(
       (config) => {
         const token = localStorage.getItem('token');
@@ -37,7 +37,7 @@ class ApiClient {
       }
     );
 
-    // Response interceptor - Hata yönetimi
+
     this.client.interceptors.response.use(
       (response) => response,
       (error) => {
@@ -50,7 +50,7 @@ class ApiClient {
     );
   }
 
-  // Auth endpoints
+
   async login(credentials: LoginRequest): Promise<LoginResponse> {
     const { data } = await this.client.post<LoginResponse>('/admin/login', credentials);
     return data;
@@ -61,7 +61,7 @@ class ApiClient {
     return data;
   }
 
-  // Insurance endpoints
+
   async getInsurances(): Promise<ApiResponse<Insurance[]>> {
     const { data } = await this.client.get<ApiResponse<Insurance[]>>('/admin/insurances');
     return data;
@@ -92,7 +92,7 @@ class ApiClient {
     return data;
   }
 
-  // Application endpoints
+
   async getApplications(): Promise<ApiResponse<Application[]>> {
     const { data } = await this.client.get<ApiResponse<Application[]>>('/admin/applications');
     return data;
@@ -108,7 +108,7 @@ class ApiClient {
     return data;
   }
 
-  // Public endpoints (no auth required)
+
   async getActiveInsurances(): Promise<ApiResponse<Insurance[]>> {
     const { data } = await this.client.get<ApiResponse<Insurance[]>>('/public/insurances');
     return data;

@@ -81,7 +81,7 @@ export const InsuranceSelectionScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="white" />
-      {/* Header */}
+
       <View style={styles.header}>
         <TouchableOpacity
           style={styles.backButton}
@@ -95,7 +95,7 @@ export const InsuranceSelectionScreen: React.FC<Props> = ({ navigation }) => {
         <Text style={styles.headerTitle}>Sigorta Türü Seçin</Text>
       </View>
 
-      {/* Content */}
+
       <View style={styles.content}>
         <Text style={styles.subtitle}>
           Size en uygun sigorta türünü seçin

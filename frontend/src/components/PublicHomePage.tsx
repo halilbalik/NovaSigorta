@@ -68,7 +68,7 @@ export const PublicHomePage: React.FC = () => {
       setIsSubmitting(true);
       setError('');
 
-      // Format date to ISO string for backend
+
       const formattedData = {
         ...applicationData,
         selectedDate: new Date(applicationData.selectedDate).toISOString(),
@@ -111,7 +111,7 @@ export const PublicHomePage: React.FC = () => {
             En kısa sürede sizinle iletişime geçeceğiz.
           </p>
 
-          {/* Emergency Contact Info */}
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
             <div className="flex items-center text-blue-800">
               <svg className="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,7 +139,7 @@ export const PublicHomePage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      {/* Header */}
+
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
@@ -158,7 +158,7 @@ export const PublicHomePage: React.FC = () => {
         </div>
       </header>
 
-      {/* Main Content */}
+
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -169,7 +169,7 @@ export const PublicHomePage: React.FC = () => {
           </p>
         </div>
 
-        {/* Error Message */}
+
         {error && (
           <div className="bg-red-50 border border-red-200 rounded-md p-4 mb-8">
             <p className="text-sm text-red-600">{error}</p>
@@ -177,7 +177,7 @@ export const PublicHomePage: React.FC = () => {
         )}
 
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          {/* Step 1: Insurance Selection */}
+
           <div className="p-6 border-b border-gray-200">
             <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
               <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3">1</span>
@@ -209,7 +209,7 @@ export const PublicHomePage: React.FC = () => {
             )}
           </div>
 
-          {/* Step 2: Application Form */}
+
           {selectedInsurance && (
             <form onSubmit={handleSubmit} className="p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">

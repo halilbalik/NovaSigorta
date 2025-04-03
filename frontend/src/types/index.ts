@@ -1,4 +1,3 @@
-// API Response Types
 export interface ApiResponse<T> {
   success: boolean;
   message: string;
@@ -6,7 +5,6 @@ export interface ApiResponse<T> {
   errors?: string[];
 }
 
-// Auth Types
 export interface LoginRequest {
   username: string;
   password: string;
@@ -25,7 +23,6 @@ export interface AdminProfile {
   lastLoginAt?: string;
 }
 
-// Insurance Types
 export interface Insurance {
   id: number;
   name: string;
@@ -45,7 +42,6 @@ export interface UpdateInsuranceRequest {
   description: string;
 }
 
-// Application Types
 export interface Application {
   id: number;
   insuranceId: number;
@@ -61,7 +57,6 @@ export interface CreateApplicationRequest {
   phone: string;
 }
 
-// UI State Types
 export interface AuthState {
   token: string | null;
   admin: AdminProfile | null;

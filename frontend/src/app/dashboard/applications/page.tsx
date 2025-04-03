@@ -16,7 +16,7 @@ export default function ApplicationsPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
 
-  // Filter states
+
   const [selectedInsuranceId, setSelectedInsuranceId] = useState<number | null>(null);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
 
@@ -26,7 +26,7 @@ export default function ApplicationsPage() {
     loadData();
   }, []);
 
-  // Clear error after 3 seconds
+
   useEffect(() => {
     if (error) {
       const timer = setTimeout(() => {
@@ -40,7 +40,7 @@ export default function ApplicationsPage() {
     try {
       setIsLoading(true);
 
-      // Paralel olarak başvuruları ve sigortaları yükle
+
       const [applicationsResponse, insurancesResponse] = await Promise.all([
         api.getApplications(),
         api.getInsurances(),
@@ -72,16 +72,16 @@ export default function ApplicationsPage() {
     }
   };
 
-  // Filtered and sorted applications
+
   const filteredAndSortedApplications = useMemo(() => {
     let filtered = applications;
 
-    // Filter by insurance type
+
     if (selectedInsuranceId) {
       filtered = filtered.filter(app => app.insuranceId === selectedInsuranceId);
     }
 
-    // Sort by creation date
+
     const sorted = [...filtered].sort((a, b) => {
       const dateA = new Date(a.createdAt).getTime();
       const dateB = new Date(b.createdAt).getTime();
@@ -131,7 +131,7 @@ export default function ApplicationsPage() {
     <ProtectedRoute>
       <DashboardLayout>
         <div className="space-y-6">
-          {/* Page header */}
+
           <div className="md:flex md:items-center md:justify-between">
             <div className="flex-1 min-w-0">
               <h1 className="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
@@ -163,14 +163,14 @@ export default function ApplicationsPage() {
             </div>
           </div>
 
-          {/* Alert messages */}
+
           {error && (
             <div className="bg-red-50 border border-red-200 rounded-md p-4">
               <p className="text-sm text-red-600">{error}</p>
             </div>
           )}
 
-          {/* Filters */}
+
           <ApplicationFilter
             insurances={insurances}
             selectedInsuranceId={selectedInsuranceId}
@@ -181,7 +181,7 @@ export default function ApplicationsPage() {
             filteredCount={filteredAndSortedApplications.length}
           />
 
-          {/* Applications table */}
+
           <div className="bg-white shadow rounded-lg">
             <div className="px-4 py-5 sm:p-6">
               <div className="flex items-center mb-4">
@@ -198,7 +198,7 @@ export default function ApplicationsPage() {
             </div>
           </div>
 
-          {/* Summary stats */}
+
           {applications.length > 0 && (
             <div className="bg-white shadow rounded-lg">
               <div className="px-4 py-5 sm:p-6">

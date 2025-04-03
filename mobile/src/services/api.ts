@@ -15,9 +15,7 @@ class ApiService {
   private client: AxiosInstance;
 
   constructor() {
-    // Backend API URL - Windows localhost
-    const baseURL = 'http://10.0.2.2:5260/api'; // Android emulator
-    // const baseURL = 'http://localhost:5260/api'; // iOS simulator
+    const baseURL = 'http://10.0.2.2:5260/api';
 
     this.client = axios.create({
       baseURL,
@@ -27,7 +25,6 @@ class ApiService {
       },
     });
 
-    // Response interceptor - Hata yönetimi
     this.client.interceptors.response.use(
       (response) => response,
       (error) => {
@@ -37,7 +34,6 @@ class ApiService {
     );
   }
 
-  // Public endpoints (no auth required)
   async getActiveInsurances(): Promise<ApiResponse<Insurance[]>> {
     const { data } = await this.client.get<ApiResponse<Insurance[]>>('/public/insurances');
     return data;
@@ -48,7 +44,6 @@ class ApiService {
     return data;
   }
 
-  // Admin endpoints (auth required)
   private getAuthHeaders(token: string) {
     return {
       Authorization: `Bearer ${token}`,
@@ -112,7 +107,6 @@ class ApiService {
 
 export const apiService = new ApiService();
 
-// Admin API wrapper for easier usage
 export const adminApi = {
   login: (username: string, password: string) =>
     apiService.adminLogin({ username, password }),

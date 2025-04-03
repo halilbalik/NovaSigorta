@@ -50,7 +50,7 @@ export const ApplicationFilter: React.FC<ApplicationFilterProps> = ({
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {/* Insurance Type Filter */}
+
         <div>
           <label htmlFor="insurance-filter" className="block text-sm font-medium text-gray-700 mb-2">
             Sigorta Türü
@@ -70,7 +70,7 @@ export const ApplicationFilter: React.FC<ApplicationFilterProps> = ({
           </select>
         </div>
 
-        {/* Sort Order */}
+
         <div>
           <label htmlFor="sort-order" className="block text-sm font-medium text-gray-700 mb-2">
             Sıralama
@@ -86,7 +86,7 @@ export const ApplicationFilter: React.FC<ApplicationFilterProps> = ({
           </select>
         </div>
 
-        {/* Results Count */}
+
         <div className="flex items-end">
           <div className="bg-gray-50 px-3 py-2 rounded-md w-full">
             <p className="text-sm text-gray-600">
@@ -99,7 +99,7 @@ export const ApplicationFilter: React.FC<ApplicationFilterProps> = ({
         </div>
       </div>
 
-      {/* Active Filter Indicators */}
+
       {hasActiveFilters && (
         <div className="mt-4 flex flex-wrap gap-2">
           {selectedInsuranceId && (

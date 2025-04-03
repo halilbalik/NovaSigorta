@@ -29,7 +29,7 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
         translucent={Platform.OS === 'android'}
       />
 
-      {/* Header */}
+
       <View style={styles.header}>
         <View style={styles.headerContent}>
           <Ionicons name="shield-checkmark" size={32} color="white" />
@@ -43,9 +43,9 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      {/* Main Content */}
+
       <View style={styles.content}>
-        {/* Welcome Section */}
+
         <View style={styles.welcomeSection}>
           <Text style={styles.welcomeTitle}>Hoş Geldiniz</Text>
           <Text style={styles.welcomeSubtitle}>
@@ -53,7 +53,7 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
           </Text>
         </View>
 
-        {/* Features */}
+
         <View style={styles.featuresContainer}>
           <View style={styles.feature}>
             <Ionicons name="flash" size={24} color="#2563eb" />
@@ -69,7 +69,7 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Start Button */}
+
         <TouchableOpacity
           style={styles.startButton}
           onPress={() => navigation.navigate('InsuranceSelection')}
@@ -78,7 +78,7 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
           <Ionicons name="arrow-forward" size={20} color="white" />
         </TouchableOpacity>
 
-        {/* Info */}
+
         <View style={styles.infoContainer}>
           <Ionicons name="information-circle-outline" size={20} color="#6b7280" />
           <Text style={styles.infoText}>

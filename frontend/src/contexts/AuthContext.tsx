@@ -84,7 +84,7 @@ interface AuthProviderProps {
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
-  // Token varsa profil bilgilerini yükle
+
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
@@ -103,7 +103,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       if (response.success && response.token) {
         localStorage.setItem('token', response.token);
 
-        // Profil bilgilerini al
+
         const profileResponse = await api.getProfile();
 
         if (profileResponse.success && profileResponse.data) {

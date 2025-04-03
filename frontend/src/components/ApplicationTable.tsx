@@ -14,7 +14,7 @@ export const ApplicationTable: React.FC<ApplicationTableProps> = ({
   isLoading = false,
 }) => {
   const formatPhoneNumber = (phone: string) => {
-    // Format: +90 (555) 123-4567
+
     if (phone.length === 11 && phone.startsWith('0')) {
       return `+90 (${phone.slice(1, 4)}) ${phone.slice(4, 7)}-${phone.slice(7)}`;
     }

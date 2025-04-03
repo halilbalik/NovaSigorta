@@ -33,12 +33,12 @@ export const SuccessScreen: React.FC<Props> = ({ navigation, route }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        {/* Success Icon */}
+
         <View style={styles.successIcon}>
           <Ionicons name="checkmark-circle" size={120} color="#10b981" />
         </View>
 
-        {/* Success Message */}
+
         <Text style={styles.title}>Başvurunuz Alındı!</Text>
 
         <Text style={styles.message}>
@@ -49,7 +49,7 @@ export const SuccessScreen: React.FC<Props> = ({ navigation, route }) => {
           En kısa sürede sizinle iletişime geçeceğiz.
         </Text>
 
-        {/* Action Buttons */}
+
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.primaryButton}
@@ -68,7 +68,7 @@ export const SuccessScreen: React.FC<Props> = ({ navigation, route }) => {
           </TouchableOpacity>
         </View>
 
-        {/* Contact Info */}
+
         <View style={styles.contactInfo}>
           <Ionicons name="information-circle-outline" size={20} color="#6b7280" />
           <Text style={styles.contactText}>

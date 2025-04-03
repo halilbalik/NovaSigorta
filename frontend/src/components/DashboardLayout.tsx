@@ -44,7 +44,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) =>
 
   return (
     <div className="h-screen flex bg-gray-100">
-      {/* Mobile sidebar overlay */}
+
       {sidebarOpen && (
         <div className="fixed inset-0 flex z-40 md:hidden">
           <div
@@ -65,16 +65,16 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) =>
         </div>
       )}
 
-      {/* Desktop sidebar */}
+
       <div className="hidden md:flex md:flex-shrink-0">
         <div className="flex flex-col w-64">
           <SidebarContent navigation={navigation} isCurrentPath={isCurrentPath} />
         </div>
       </div>
 
-      {/* Main content */}
+
       <div className="flex flex-col w-0 flex-1 overflow-hidden">
-        {/* Top navigation */}
+
         <div className="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
           <button
             className="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 md:hidden"
@@ -113,7 +113,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) =>
           </div>
         </div>
 
-        {/* Page content */}
+
         <main className="flex-1 relative overflow-y-auto focus:outline-none bg-gray-50">
           <div className="py-6">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">

@@ -16,11 +16,11 @@ export default function InsurancesPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [isActionLoading, setIsActionLoading] = useState(false);
 
-  // Modal states
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedInsurance, setSelectedInsurance] = useState<Insurance | null>(null);
 
-  // Confirm dialog states
+
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
   const [insuranceToDelete, setInsuranceToDelete] = useState<Insurance | null>(null);
 
@@ -31,7 +31,7 @@ export default function InsurancesPage() {
     loadInsurances();
   }, []);
 
-  // Clear messages after 3 seconds
+
   useEffect(() => {
     if (error || successMessage) {
       const timer = setTimeout(() => {
@@ -198,7 +198,7 @@ export default function InsurancesPage() {
     <ProtectedRoute>
       <DashboardLayout>
         <div className="space-y-6">
-          {/* Page header */}
+
           <div className="md:flex md:items-center md:justify-between">
             <div className="flex-1 min-w-0">
               <h1 className="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
@@ -227,7 +227,7 @@ export default function InsurancesPage() {
             </div>
           </div>
 
-          {/* Alert messages */}
+
           {error && (
             <div className="bg-red-50 border border-red-200 rounded-md p-4">
               <p className="text-sm text-red-600">{error}</p>
@@ -240,7 +240,7 @@ export default function InsurancesPage() {
             </div>
           )}
 
-          {/* Insurance table */}
+
           <div className="bg-white shadow rounded-lg">
             <div className="px-4 py-5 sm:p-6">
               <InsuranceTable
@@ -254,7 +254,7 @@ export default function InsurancesPage() {
           </div>
         </div>
 
-        {/* Create/Edit Modal */}
+
         <InsuranceModal
           isOpen={isModalOpen}
           onClose={closeModal}
@@ -263,7 +263,7 @@ export default function InsurancesPage() {
           isLoading={isActionLoading}
         />
 
-        {/* Delete Confirmation */}
+
         <ConfirmDialog
           isOpen={isConfirmOpen}
           onClose={closeConfirm}

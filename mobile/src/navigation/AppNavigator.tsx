@@ -40,13 +40,13 @@ export const AppNavigator: React.FC = () => {
             },
           }}
         >
-          {/* Public Screens */}
+
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="InsuranceSelection" component={InsuranceSelectionScreen} />
           <Stack.Screen name="ApplicationForm" component={ApplicationFormScreen} />
           <Stack.Screen name="Success" component={SuccessScreen} />
 
-          {/* Admin Screens */}
+
           <Stack.Screen name="AdminLogin" component={AdminLoginScreen} />
           <Stack.Screen name="AdminDashboard" component={AdminDashboardScreen} />
           <Stack.Screen name="AdminInsurances" component={AdminInsurancesScreen} />
