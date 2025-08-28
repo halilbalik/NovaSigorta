@@ -1,139 +1,116 @@
-# 🛡️ Nova Sigorta
+# Nova Sigorta
 
 **Modern sigorta yönetim sistemi**
-
 Nova Sigorta, .NET Clean Architecture backend, React web sürümü ve React Native mobil uygulaması ile geliştirilen bir sigorta başvuru ve yönetim platformudur.
 
----
+## Özellikler
 
-## 🚀 Özellikler
-
-### 🎯 **Backend (.NET 8)**
+###  **Backend (.NET 8)**
 - **Clean Architecture** - Domain, Application, Infrastructure, API katmanları
 - **JWT Authentication** - Güvenli admin girişi
 - **PostgreSQL** - Performanslı veritabanı
-- **Swagger Documentation** - Kapsamlı API dokümantasyonu
+- **Swagger Documentation** - API dokümantasyonu
 - **Repository Pattern** - Esnek veri erişim katmanı
 
-### 💻 **Web Admin Panel (React)**
+###  **Frontend**
 - **Dashboard** - İstatistikler ve genel bakış
 - **Sigorta Yönetimi** - CRUD işlemleri
 - **Başvuru Takibi** - Başvuru listesi ve filtreleme
-- **Responsive Design** - Tüm cihazlarda uyumlu
+- **React | React Native Desteği**
 
-### 📱 **Mobil Uygulama (React Native)**
-- **Kullanıcı Uygulaması** - Sigorta başvuru sistemi
-- **Admin Uygulaması** - Mobil yönetim paneli
-- **Cross Platform** - iOS ve Android desteği
-
----
-
-## 📱 Mobil Uygulama
-
-### Kullanıcı Deneyimi
-<div align="center">
-  <img src="screenshot/mobile/ana_ekran.png" alt="Ana Ekran" width="250"/>
-  <img src="screenshot/mobile/sigorta_turleri.png" alt="Sigorta Türleri" width="250"/>
-</div>
-
-<div align="center">
-  <img src="screenshot/mobile/basvuru_ekrani.png" alt="Başvuru Ekranı" width="250"/>
-  <img src="screenshot/mobile/basvuru_alindi.png" alt="Başvuru Alındı" width="250"/>
-</div>
+## Mobil Uygulama
+### Kullanıcı Paneli
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshot/mobile/ana_ekran.png" width="250" alt="Ana Ekran">
+      <br>
+      <b>Ana Ekran</b>
+      <br>
+      <em>Uygulamanın başlangıç sayfası ve genel görünümü</em>
+    </td>
+    <td align="center">
+      <img src="screenshot/mobile/sigorta_turleri.png" width="250" alt="Sigorta Türleri">
+      <br>
+      <b>Sigorta Türleri</b>
+      <br>
+      <em>Mevcut sigorta seçenekleri ve kategorileri</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="screenshot/mobile/basvuru_ekrani.png" width="250" alt="Başvuru Ekranı">
+      <br>
+      <b>Başvuru Ekranı</b>
+      <br>
+      <em>Sigorta başvurusu yapma formu ve arayüzü</em>
+    </td>
+    <td align="center">
+      <img src="screenshot/mobile/basvuru_alindi.png" width="250" alt="Başvuru Alındı">
+      <br>
+      <b>Başvuru Onayı</b>
+      <br>
+      <em>Başvuru tamamlandıktan sonra görülen onay ekranı</em>
+    </td>
+  </tr>
+</table>
 
 ### Admin Paneli
-<div align="center">
-  <img src="screenshot/mobile/admin_giris.png" alt="Admin Giriş" width="250"/>
-  <img src="screenshot/mobile/admin_dashboard.png" alt="Admin Dashboard" width="250"/>
-</div>
 
-<div align="center">
-  <img src="screenshot/mobile/admin_sigorta_y.png" alt="Sigorta Yönetimi" width="250"/>
-  <img src="screenshot/mobile/admin_basvuru_l.png" alt="Başvuru Listesi" width="250"/>
-</div>
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshot/mobile/admin_giris.png" width="250" alt="Admin Giriş">
+      <br>
+      <b>Admin Girişi</b>
+      <br>
+      <em>Yönetici paneline giriş ekranı</em>
+    </td>
+    <td align="center">
+      <img src="screenshot/mobile/admin_dashboard.png" width="250" alt="Admin Dashboard">
+      <br>
+      <b>Admin Dashboard</b>
+      <br>
+      <em>Yönetici ana kontrol paneli ve istatistikler</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="screenshot/mobile/admin_sigorta_y.png" width="250" alt="Sigorta Yönetimi">
+      <br>
+      <b>Sigorta Yönetimi</b>
+      <br>
+      <em>Sigorta türlerinin düzenlenmesi ve yönetimi</em>
+    </td>
+    <td align="center">
+      <img src="screenshot/mobile/admin_basvuru_l.png" width="250" alt="Başvuru Listesi">
+      <br>
+      <b>Başvuru Listesi</b>
+      <br>
+      <em>Gelen başvuruların görüntülenmesi ve yönetimi</em>
+    </td>
+  </tr>
+</table>
 
 ---
 
-## 🔧 API Dokümantasyonu
-
-<div align="center">
-  <img src="screenshot/api/0.png" alt="Swagger API Documentation" width="700"/>
-</div>
-
----
-
-## 🛠️ Teknoloji Stack
+## Teknolojiler
 
 ### Backend
-- **.NET 8** - Modern framework
-- **PostgreSQL** - Güvenilir veritabanı
-- **Entity Framework Core** - ORM
-- **JWT** - Authentication
-- **Swagger** - API dokümantasyonu
+- **.NET 8**
+- **PostgreSQL**
+- **Entity Framework Core**
+- **JWT**
+- **Swagger**
 
-### Frontend
-- **React 19** - Modern UI library
-- **Next.js 15** - Full-stack framework
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Responsive design
+### Frontend (Web)
+- **React 19**
+- **Next.js 15** 
+- **TypeScript**
+- **Tailwind CSS**
 
 ### Mobile
-- **React Native** - Cross-platform development
-- **Expo** - Development platform
-- **TypeScript** - Type safety
-- **React Navigation** - Navigation system
-
----
-
-## 🚀 Kurulum
-
-### 1. Backend (.NET)
-```bash
-cd src/NovaSigorta.API
-dotnet restore
-dotnet run
-```
-
-### 2. Web Admin Panel
-```bash
-cd frontend/admin-panel
-npm install
-npm run dev
-```
-
-### 3. Mobil Uygulama
-```bash
-cd mobile
-npm install
-expo start
-```
-
----
-
-## 📋 Kullanım
-
-### Admin Girişi
-- **Kullanıcı Adı:** `halil`
-- **Şifre:** `ee04df74ba`
-
-### API Endpoint'leri
-- **Swagger UI:** `http://localhost:5260/swagger`
-- **Base URL:** `http://localhost:5260/api`
-
-### Web Admin Panel
-- **URL:** `http://localhost:3000`
-- **Admin Panel:** `http://localhost:3000/login`
-
----
-
-## 🎯 Özellik Detayları
-
-### ✅ Tamamlanan Özellikler
-- [x] JWT Authentication sistemi
-- [x] Sigorta CRUD işlemleri
-- [x] Başvuru yönetimi
-- [x] Admin dashboard
-- [x] Responsive web arayüzü
-- [x] Cross-platform mobil uygulama
-- [x] API dokümantasyonu
-- [x] PostgreSQL entegrasyonu
+- **React Native**
+- **Expo** 
+- **TypeScript** 
+- **React Navigation** 
