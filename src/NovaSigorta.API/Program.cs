@@ -9,29 +9,23 @@ using NovaSigorta.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configuration
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 var jwtSecretKey = builder.Configuration["JwtSettings:SecretKey"] ?? "NovaSigortaSuperSecretKeyForJWTTokenGeneration2025!";
 var jwtIssuer = builder.Configuration["JwtSettings:Issuer"] ?? "NovaSigorta";
 var jwtAudience = builder.Configuration["JwtSettings:Audience"] ?? "NovaSigortaAdmin";
 
-// Add services to the container
 
-// Database
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString));
 
-// Repositories
 builder.Services.AddScoped<IInsuranceRepository, InsuranceRepository>();
 builder.Services.AddScoped<IApplicationRepository, ApplicationRepository>();
 builder.Services.AddScoped<IAdminRepository, AdminRepository>();
 
-// Services
 builder.Services.AddScoped<IInsuranceService, InsuranceService>();
 builder.Services.AddScoped<IApplicationService, ApplicationService>();
 builder.Services.AddScoped<IAdminService, AdminService>();
 
-// JWT Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -50,10 +44,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-// Controllers
 builder.Services.AddControllers();
 
-// CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -64,7 +56,6 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -75,7 +66,6 @@ builder.Services.AddSwaggerGen(c =>
         Description = "Nova Sigorta Backend API"
     });
 
-    // JWT Authorization için Swagger konfigürasyonu
     c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
     {
         Description = "JWT Authorization header using the Bearer scheme. Örnek: \"Authorization: Bearer {token}\"",
@@ -106,7 +96,6 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline
 
 if (app.Environment.IsDevelopment())
 {
@@ -114,7 +103,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Nova Sigorta API v1");
-        c.RoutePrefix = string.Empty; // Swagger'ı root'ta açar
+        c.RoutePrefix = string.Empty; 
     });
 }
 
@@ -127,13 +116,11 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Database Migration (Development ortamında)
 if (app.Environment.IsDevelopment())
 {
     using var scope = app.Services.CreateScope();
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
-    // Veritabanını oluştur ve migration'ları uygula
     try
     {
         await context.Database.EnsureCreatedAsync();
